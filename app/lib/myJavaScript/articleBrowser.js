@@ -22,3 +22,14 @@ function SecondCtrl($scope, Data){
 
 }}
 
+
+function SpringHello($scope, $http) {
+  $http.get('http://localhost:9090/springapp/greetingJSON').
+        success(function(data) {
+            $scope.greeting = data;
+        });
+}
+
+
+
+

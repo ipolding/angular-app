@@ -5,8 +5,7 @@
   <title>My HTML File</title>
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/myJavaScript/articleBrowser.js"></script>
+
 </head>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"/>
@@ -23,10 +22,15 @@
 
 
 <br>
-	{{reversedMessage(data.message)}}	
+	{{reversedMessage(data.message)}}
 
 </article>
 
+    <div ng-controller="SpringHello">
+        <p>This makes an API request to our springserver</p>
+        <p>The ID is {{greeting.id}}</p>
+	    <p>The content is {{greeting.content}}</p>
+    </div>
 
 
 </body>
@@ -36,5 +40,7 @@
   <script src="lib/myJavaScript/articleBrowser.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="lib/myJavaScript/articleBrowser.js"></script>
 
 </html>
+
