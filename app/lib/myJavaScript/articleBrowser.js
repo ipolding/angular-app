@@ -24,12 +24,13 @@ function SecondCtrl($scope, Data){
 
 
 function SpringHello($scope, $http) {
-  $http.get('http://localhost:9090/springapp/greetingJSON').
+  $http.get('http://localhost:8080/spring-webapp/greetingJSON').
         success(function(data) {
             $scope.greeting = data;
-        });
+			$scope.text = "sasuages";        
+});
 }
 
 
 
-
+
