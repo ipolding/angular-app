@@ -14,7 +14,7 @@ articleBrowser.filter('reverse', function(Data){
 
 function SecondCtrl($scope, Data){
    $scope.data = Data;
-
+   $scope.turnip = "Sausages";
    $scope.reversedMessage = function(message){
    return message.split("").reverse().join("");
 
@@ -24,11 +24,11 @@ function SecondCtrl($scope, Data){
 
 
 function SpringHello($scope, $http) {
+  $scope.text = "sasuages";
   $http.get('http://localhost:8080/spring-webapp/greetingJSON').
         success(function(data) {
             $scope.greeting = data;
-			$scope.text = "sasuages";        
-});
+			      });
 }
 
 
