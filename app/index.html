@@ -30,10 +30,39 @@ Dogs eat {{turnip}}
         <p>This makes an API request to our springserver</p>
 
 	    <p>The content is {{greeting.content}}</p>
-    
+
 		<p>dyslexic dogs like to eat {{text}}</p>
 
 </div>
+
+
+   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" >
+$(document).ready(function(){
+  sendAjax();
+});
+
+function sendAjax() {
+
+$.ajax({
+    url: "http://localhost:8080/spring-webapp/person",
+    type: 'POST',
+    dataType: 'json',
+    data: "{\"name\":\"hmkcode\",\"id\":2}",
+    contentType: 'application/json',
+    mimeType: 'application/json',
+    success: function(data) {
+        alert(data.id + " " + data.name);
+    },
+    error:function(data,status,er) {
+        alert("error: "+data+" status: "+status+" er:"+er);
+    }
+});
+}
+</script>
+
+
+
 
 
 </body>
@@ -46,4 +75,5 @@ Dogs eat {{turnip}}
   <script src="lib/myJavaScript/articleBrowser.js"></script>
 
 </html>
-
+
+
