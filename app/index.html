@@ -1,14 +1,16 @@
 <!doctype html>
 <html lang="en" ng-app="articleBrowser">
-<head>
-  <meta charset="utf-8">
-  <title>My HTML File</title>
-  <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>My HTML File</title>
+      <link rel="stylesheet" href="css/app.css">
+      <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
 
-</head>
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"/>
+    </head>
+
+
 
 
 <body class="starter-template">
@@ -31,7 +33,7 @@ Dogs eat {{turnip}}
 
 	    <p>The content is {{greeting.content}}</p>
 
-		<p>dyslexic dogs like to eat {{text}}</p>
+		<p>dyslexic dogs like to eat {{text}}</p>openi
 
 </div>
 
@@ -52,7 +54,7 @@ $.ajax({
     contentType: 'application/json',
     mimeType: 'application/json',
     success: function(data) {
-        alert(data.id + " " + data.name);
+        console.log(data.id + " " + data.name);
     },
     error:function(data,status,er) {
         alert("error: "+data+" status: "+status+" er:"+er);
@@ -62,7 +64,22 @@ $.ajax({
 </script>
 
 
+<form ng-controller="UserController" ng-submit="createUser()">
 
+    <legend>Create User</legend>
+
+    <label>Name</label>
+    <input type="text" id="name" name="name" ng-model="user.name" placeholder="User Name">
+
+    <label>Email</label>
+    <input type="text" id="email" name="email" ng-model="user.email" placeholder="ur email here">
+
+    <label>Password</label>
+    <input type="password" id="pwd" name="pwd" ng-model="user.pwd" placeholder="ur own pwd here">
+    <a href="http://docs.angularjs.org/guide/forms">Click here for info</a>
+    <button class="btn btn-primary">Register</button>
+    <div> form = {{user | json}}
+</form>
 
 
 </body>

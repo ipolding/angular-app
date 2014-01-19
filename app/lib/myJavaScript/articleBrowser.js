@@ -25,12 +25,26 @@ function SecondCtrl($scope, Data){
 
 function SpringHello($scope, $http) {
   $scope.text = "sasuages";
-  $http.get('http://localhost:8080/spring-webapp/greeting').
+  $http.get('http://192.168.1.73:8080/spring-webapp/greeting').
         success(function(data) {
             $scope.greeting = data;
 			      });
 }
 
 
+function UserController($scope) {
+  $scope.master = {}
 
+  $scope.update = function(user) {
+    $scope.master = angular.copy(user);
+
+  };
+
+  $scope.reset = function() {
+    $scope.user = angular.copy($scope.master);
+
+  }
+
+
+}
 
