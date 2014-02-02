@@ -47,19 +47,25 @@ $(document).ready(function(){
 function sendAjax() {
 
 $.ajax({
-    url: "http://localhost:8080/spring-webapp/person",
+    url: "http://localhost:8080/spring-webapp/createSpitterFromJSON",
     type: 'POST',
     dataType: 'json',
-    data: "{\"name\":\"hmkcode\",\"id\":2}",
+    data: "{\"username\":\"Dismantled\",\"password\":\"angularpwd\",\"fullName\":\"Angular Test\"}",
     contentType: 'application/json',
     mimeType: 'application/json',
     success: function(data) {
-        console.log(data.id + " " + data.name);
+        console.log(data.username + " " + data.fullName);
     },
     error:function(data,status,er) {
         alert("error: "+data+" status: "+status+" er:"+er);
     }
 });
+
+
+
+
+
+
 }
 </script>
 
