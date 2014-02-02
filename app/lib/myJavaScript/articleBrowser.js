@@ -32,7 +32,7 @@ function SpringHello($scope, $http) {
 }
 
 
-function UserController($scope) {
+function UserController($scope, $http) {
   $scope.master = {}
 
   $scope.update = function(user) {
@@ -44,6 +44,16 @@ function UserController($scope) {
     $scope.user = angular.copy($scope.master);
 
   }
+
+  $scope.sendUser = function(user){
+    console.log(user.username);
+    $http.post("http://localhost:8080/spring-webapp/createSpitterFromJSON", validatedUser);
+      }
+
+
+
+
+
 
 
 }

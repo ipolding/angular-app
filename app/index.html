@@ -45,7 +45,7 @@ $(document).ready(function(){
 });
 
 function sendAjax() {
-
+/*
 $.ajax({
     url: "http://localhost:8080/spring-webapp/createSpitterFromJSON",
     type: 'POST',
@@ -59,7 +59,7 @@ $.ajax({
     error:function(data,status,er) {
         alert("error: "+data+" status: "+status+" er:"+er);
     }
-});
+});*/
 
 
 
@@ -75,15 +75,15 @@ $.ajax({
     <legend>Create User</legend>
 
     <label>Name</label>
-    <input type="text" id="name" name="name" ng-model="user.name" placeholder="User Name">
+    <input type="text" id="username" name="username" ng-model="user.username" placeholder="Username" required>
 
-    <label>Email</label>
-    <input type="text" id="email" name="email" ng-model="user.email" placeholder="ur email here">
+    <label>Full Name</label>
+    <input type="text" id="fullName" name="fullName" ng-model="user.fullName" placeholder="Full Name" required>
 
     <label>Password</label>
-    <input type="password" id="pwd" name="pwd" ng-model="user.pwd" placeholder="ur own pwd here">
+    <input type="password" id="password" name="password" ng-model="user.password" placeholder="Password" required>
     <a href="http://docs.angularjs.org/guide/forms">Click here for info</a>
-    <button class="btn btn-primary">Register</button>
+    <button class="btn btn-primary" ng-click="sendUser(user)">Register</button>
     <div> form = {{user | json}}
 </form>
 
